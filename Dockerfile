@@ -1,5 +1,5 @@
 FROM node:carbon
-WORKDIR /root/src/app
+WORKDIR /root/docker_test/src/app
 COPY package*.js .
 RUN npm install
 COPY . .
