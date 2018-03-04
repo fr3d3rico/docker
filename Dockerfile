@@ -1,5 +1,5 @@
 FROM node:carbon
-WORKDIR /usr/src/app
+WORKDIR /root/src/app
 COPY package*.js ./
 RUN npm install
 COPY . .
