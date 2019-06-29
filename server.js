@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://silly_einstein:27017/test', {useNewUrlParser: true});
+mongoose.connect('mongodb://x:27017/test', {useNewUrlParser: true});
 
 var db = mongoose.connection;
 
@@ -21,7 +21,7 @@ const PORT = 8080;
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Hello Docker!(silly_einstein)');
+    res.send('Hello Docker!(x)');
 });
 
 app.get('/save', (req, res) => {
@@ -45,5 +45,5 @@ app.get('/list', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('Server up!(silly_einstein)');
+    console.log('Server up!(x)');
 });
