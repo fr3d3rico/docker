@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://mongo:27017/test', {useNewUrlParser: true});
 const Cat = mongoose.model('Cat', { name: String });
 
-db.on('error', console.error.bind(console, 'connection error:'));
+/*db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
   console.log("h");
-});
+});*/
 
 const PORT = 8080;
 
