@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
+mongoose.connect('mongodb://mongo:27017/test', {useNewUrlParser: true});
 
 var db = mongoose.connection;
 
