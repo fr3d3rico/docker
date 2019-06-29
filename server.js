@@ -28,7 +28,7 @@ app.get('/save', (req, res) => {
     
     const kitty = new Cat({ name: 'Zildjian' });
     kitty.save((err, cat) => {
-      if(err) res.send(err);
+      if(err) return res.send(err);
       res.send(cat);
     });
 
