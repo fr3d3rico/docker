@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-var db = mongoose.connect('mongodb://mongo:27017/test', {useNewUrlParser: true});
+mongoose.connect('mongodb://mongo:27017/test', {useNewUrlParser: true});
+
+var db = mongoose.connection;
 const Cat = mongoose.model('Cat', { name: String });
 
-/*db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
   console.log("h");
-});*/
+});
 
 const PORT = 8080;
 
@@ -20,9 +22,12 @@ app.get('/', (req, res) => {
 app.get('/save', (req, res) => {
     
     const kitty = new Cat({ name: 'Zildjian' });
-    kitty.save();//.then(() => console.log('meow'));
+    kitty.save((err, cat) => {
+      if(err) res.send(err);
+      res.send(cat);
+    });
 
-    res.send('Cat saved!');
+    
 });
 
 app.get('/list', (req, res) => {
