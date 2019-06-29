@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 app.get('/save', (req, res) => {
     
     const kitty = new Cat({ name: 'Zildjian' });
-    kitty.save().then(() => console.log('meow'));
+    kitty.save();//.then(() => console.log('meow'));
 
     res.send('Cat saved!');
 });
