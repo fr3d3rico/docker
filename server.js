@@ -45,5 +45,5 @@ app.get('/list', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('Server up!');
+    console.log('Server up!(silly_einstein)');
 });
