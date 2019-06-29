@@ -1,15 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://mongo:27017/test', {useNewUrlParser: true});
-
-var db = mongoose.connection;
-const Cat = mongoose.model('Cat', { name: String });
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback() {
-  console.log("h");
-});
 
 const PORT = 8080;
 
@@ -19,25 +9,7 @@ app.get('/', (req, res) => {
     res.send('Hello Docker!');
 });
 
-app.get('/save', (req, res) => {
-    
-    const kitty = new Cat({ name: 'Zildjian' });
-    kitty.save((err, cat) => {
-      if(err) res.send(err);
-      res.send(cat);
-    });
 
-    
-});
-
-app.get('/list', (req, res) => {
-
-    Cat.find(function (err, kittens) {
-        if (err) return res.send(err);
-        res.send(kittens);
-    })
-    
-});
 
 app.listen(PORT, () => {
     console.log('Server up!');
