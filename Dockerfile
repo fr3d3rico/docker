@@ -1,3 +1,6 @@
+FROM mongo
+EXPOSE 27017
+
 FROM node:carbon
 WORKDIR /root/docker_test/src/app
 COPY package*.json ./
