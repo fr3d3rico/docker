@@ -1,3 +1,4 @@
+FROM mongo
 FROM node:carbon
 WORKDIR /root/docker_test/src/app
 COPY package*.json ./
