@@ -26,3 +26,6 @@ docker run -p 8080:8080 -d fred/test1
 
 tentei esse --hostname e não deu certo:
 https://www.digitalocean.com/community/tutorials/naming-docker-containers-3-tips-for-beginners
+
+
+https://docs.docker.com/develop/develop-images/multistage-build/
