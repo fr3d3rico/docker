@@ -13,7 +13,7 @@
   "author": "@fr3d3rico",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "mongoose": "^5.5.15"
   }
 }
